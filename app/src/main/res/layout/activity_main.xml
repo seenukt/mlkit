@@ -44,5 +44,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/camera_preview" />
 
+    <com.m2p.components.inputfield.M2pCustomEditText
+        android:id="@+id/spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:entries="@array/spinner_data"
+        app:cursorVisible="false"
+        app:edit_text_hint="Spinner"
+        app:enableClear="true"
+        app:helperTextTextAppearance="@style/GrayWorkSansRegularTxt12"
+        app:hintFont="@style/GrayWorkSansRegularTxt12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:spinnerStartIcon="@drawable/m2p_ic_edit"
+        app:textFieldType="spinner"
+        app:underlineBg="false" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

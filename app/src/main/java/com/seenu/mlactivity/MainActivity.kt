@@ -117,19 +117,13 @@ class MainActivity : AppCompatActivity(), BarCodeImageListener {
         val imageCapture = ImageCapture.Builder().build()
         processCameraProvider?.unbindAll()
         val analyser = Analysis(this)
-        val imageAnalyser = ImageAnalysis.Builder()
-            .setTargetResolution(Size(1200, 1200))
-            .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
-            .build()
+        val imageAnalyser = ImageAnalysis.Builder().setTargetResolution(Size(1200, 1200))
+            .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST).build()
 
         imageAnalyser.setAnalyzer(cameraExecutor, analyser)
 
         processCameraProvider?.bindToLifecycle(
-            this,
-            cameraSelector,
-            preview,
-            imageCapture,
-            imageAnalyser
+            this, cameraSelector, preview, imageCapture, imageAnalyser
         )
 
     }
@@ -137,8 +131,7 @@ class MainActivity : AppCompatActivity(), BarCodeImageListener {
     private fun checkPermission() {
 
         cameraPermission = ContextCompat.checkSelfPermission(
-            this,
-            android.Manifest.permission.CAMERA
+            this, android.Manifest.permission.CAMERA
         ) == PackageManager.PERMISSION_GRANTED
 
 
