@@ -13,12 +13,6 @@ class Analysis(private val listener: BarCodeImageListener) :
     ImageAnalysis.Analyzer {
 
     var isDone = false
-
-
-
-
-
-
     override fun analyze(image: ImageProxy) {
         scanBarCode(image)
     }
